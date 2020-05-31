@@ -30,7 +30,7 @@ function total (clients) {
 }
 function info (index) {
   return clients[index]
-  return clients.find(index => index)
+  return clients.find((value, index) => index === 0)
 
 
 
@@ -41,11 +41,12 @@ function info (index) {
 
 
 
+function search (query) {
 
-const search = (query) => {
-
-  return clients.filter(b => b.toLowerCase().indexOf(query.toLowerCase()) !== -1)
+  return clients.filter(b => b.name.toLowerCase().indexOf('FREDERICK '.toLowerCase()) !== -1)
 }
+
+
 
 
 
