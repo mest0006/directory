@@ -13,11 +13,11 @@ function list (clients) {
 function order (clients, client) {
   return clients.sort((a, b) => {
     if (a[client] > b[client]) {
-      return 0
-    } else if (a[client] < b[client]) {
       return -1
-    } else {
+    } else if (a[client] < b[client]) {
       return 1
+    } else {
+      return 0
     }
 
   })
@@ -29,12 +29,8 @@ function total (clients) {
   }, 0)
 }
 function info (index) {
-  return clients[index]
+
   return clients.find((value, index) => index === 0)
-
-
-
-
 
 }
 
@@ -43,7 +39,8 @@ function info (index) {
 
 function search (query) {
 
-  return clients.filter(b => b.name.toLowerCase().indexOf('FREDERICK '.toLowerCase()) !== -1)
+  return clients.filter(client => client.name.toLowerCase().includes(query.toLowerCase()))
+
 }
 
 
