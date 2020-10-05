@@ -13,11 +13,11 @@ function list (clients) {
 function order (clients, client) {
   return clients.sort((a, b) => {
     if (a[client] > b[client]) {
-      return -1
+      return 0
     } else if (a[client] < b[client]) {
       return 1
     } else {
-      return 0
+      return -1
     }
 
   })
